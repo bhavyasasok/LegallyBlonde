@@ -1,169 +1,224 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Women Legal Support System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 40px;
-        }
-
-        h2 {
-            color: #2c3e50;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        button:hover {
-            background-color: #1a242f;
-        }
-
-        .analysis-box {
-            background: white;
-            padding: 15px;
-            margin-top: 20px;
-            border-left: 5px solid #3498db;
-            white-space: pre-wrap;
-        }
-
-        .law-card {
-            background: white;
-            padding: 15px;
-            margin-top: 15px;
-            border-left: 5px solid #2ecc71;
-        }
-
-        .emergency {
-            border-left: 5px solid red;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            font-size: 12px;
-            margin-left: 5px;
-            color: white;
-            border-radius: 4px;
-        }
-
-        .badge-red {
-            background-color: red;
-        }
-
-        .badge-blue {
-            background-color: #3498db;
-        }
-
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-
-        .loading {
-            color: #555;
-            margin-top: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForHer - Women Legal Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Emergency Alert Banner (Hidden by default) -->
+    <div id="emergency-banner" class="emergency-banner" style="display: none;">
+        <div class="emergency-content">
+            <span class="emergency-icon">⚠</span>
+            <span>If you are in immediate danger, please call <strong>112</strong></span>
+        </div>
+    </div>
 
-<h2>Women Legal Support System</h2>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚖</span>
+                <span class="logo-text">ForHer</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#lawyers" class="nav-link" data-page="lawyers">Lawyers</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+            </div>
+        </div>
+    </nav>
 
-<textarea id="problem" rows="5" placeholder="Describe your issue..."></textarea>
-<br><br>
-<button onclick="analyze()">Analyze</button>
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-blobs">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Know Your Rights.<br>You Are Not Alone.</h1>
+                    <p class="hero-subtitle">A safe space to understand your legal protections under Indian law.</p>
+                    
+                   
+        </section>
 
-<div id="loading" class="loading"></div>
-<div id="error" class="error"></div>
+        <!-- Response Display (appears after search) -->
+        <section id="response-section" class="response-section" style="display: none;">
+            <div class="container">
+                <div class="response-card fade-in">
+                    <div class="response-item">
+                        <div class="response-icon">🌸</div>
+                        <h3>You Are Heard</h3>
+                        <div id="response-heard" class="response-content"></div>
+                    </div>
 
-<h3>AI Analysis:</h3>
-<div id="analysis" class="analysis-box"></div>
+                    <div class="response-item">
+                        <div class="response-icon">⚖</div>
+                        <h3>What the Law Says</h3>
+                        <div id="response-law" class="response-content"></div>
+                    </div>
 
-<h3>Relevant Laws:</h3>
-<div id="laws"></div>
+                    <div class="response-item">
+                        <div class="response-icon">📌</div>
+                        <h3>Your Next Steps</h3>
+                        <div id="response-steps" class="response-content"></div>
+                    </div>
 
-<script>
-function analyze() {
+                    <div class="response-item">
+                        <div class="response-icon">📞</div>
+                        <h3>Helplines</h3>
+                        <div id="response-helplines" class="response-content"></div>
+                    </div>
 
-    const problem = document.getElementById("problem").value;
-    const loading = document.getElementById("loading");
-    const errorBox = document.getElementById("error");
+                    <div class="response-disclaimer">
+                        <div class="response-icon">🌷</div>
+                        <h4>Disclaimer</h4>
+                        <div id="response-disclaimer" class="response-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    document.getElementById("analysis").innerText = "";
-    document.getElementById("laws").innerHTML = "";
-    errorBox.innerText = "";
-    loading.innerText = "Analyzing... Please wait.";
+        <!-- About Section (Homepage) -->
+        <section class="about-section scroll-section">
+            <div class="container">
+                <div class="about-content-home">
+                    <h2>About Us</h2>
+                    <p>This platform was created to provide accessible legal information and support for women in India. We believe that understanding your legal rights is the first step toward empowerment and justice.</p>
+                    <p>Our mission is to create a safe, judgment-free space where you can explore your options, understand your protections under Indian law, and connect with professional legal assistance when needed. You are not alone in this journey.</p>
+                </div>
+            </div>
+        </section>
 
-    fetch("/analyze", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ problem: problem })
-    })
-    .then(response => response.json())
-    .then(data => {
+        <!-- Share Your Story Section -->
+        <section class="share-story-section scroll-section">
+            <div class="container">
+                <div class="share-story-content">
+                    <h2 class="section-title">Share Your Story</h2>
+                    <p class="section-subtitle">Describe what you're experiencing, and we'll help you understand your legal rights.</p>
+                    
+                    <div class="hero-search-card">
+                        <form id="guidance-form" class="guidance-form">
+                            <textarea 
+                                id="problem-input" 
+                                placeholder="Describe what you are experiencing…" 
+                                rows="5"
+                                required
+                            ></textarea>
+                            <button type="submit" class="btn-primary">
+                                <span class="btn-text">Get Legal Guidance</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="loader"></span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-        loading.innerText = "";
+    <!-- LAWYERS PAGE -->
+    <div id="lawyers-page" class="page">
+        <section class="lawyers-hero">
+            <div class="container">
+                <h1 class="page-title">Connect With Legal Professionals</h1>
+                <p class="page-subtitle">If you need personalized assistance, you may reach out to verified legal professionals.</p>
+            </div>
+        </section>
 
-        if (data.error) {
-            errorBox.innerText = data.error;
-            return;
-        }
+        <section class="lawyers-section">
+            <div class="container">
+                <div class="lawyers-grid" id="lawyers-grid">
+                    <!-- Lawyer cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </div>
 
-        // Show analysis
-        document.getElementById("analysis").innerText = data.analysis;
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page">
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="page-title">About This Platform</h1>
+                <div class="about-content">
+                    <p>This platform was created to provide accessible legal information and support for women in India. We believe that understanding your legal rights is the first step toward empowerment and justice.</p>
+                    <p>Our mission is to create a safe, judgment-free space where you can explore your options and connect with professional legal assistance when needed.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-        // Display laws as cards
-        const lawsContainer = document.getElementById("laws");
+    <!-- Floating Chat Button -->
+    <div id="chat-toggle" class="chat-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="chat-tooltip">Need clarification?</span>
+    </div>
 
-        data.matched_laws.forEach(law => {
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <h3>Legal Assistant</h3>
+            <button id="chat-close" class="chat-close">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message bot-message">
+                <div class="message-content">Hello! I'm here to help answer any questions about the legal guidance you received. How can I assist you?</div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <form id="chat-form" class="chat-form">
+                <input 
+                    type="text" 
+                    id="chat-input" 
+                    placeholder="Type your question…" 
+                    autocomplete="off"
+                >
+                <button type="submit" class="chat-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+            <div class="typing-indicator" style="display: none;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
 
-            const card = document.createElement("div");
-            card.className = "law-card";
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Emergency Contacts</h4>
+                    <p><strong>Emergency:</strong> 112</p>
+                    <p><strong>Women Helpline:</strong> 181</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Important Notice</h4>
+                    <p class="disclaimer-text">This platform provides legal information, not formal legal advice. For personalized legal counsel, please consult with a qualified attorney.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Know Your Rights. Created with care for women's empowerment.</p>
+            </div>
+        </div>
+    </footer>
 
-            if (law.emergency) {
-                card.classList.add("emergency");
-            }
-
-            card.innerHTML = `
-                <strong>${law.law_name}</strong>
-                ${law.emergency ? '<span class="badge badge-red">EMERGENCY</span>' : ''}
-                <br><br>
-                <b>Act:</b> ${law.act} <br>
-                <b>Category:</b> ${law.category} 
-                <span class="badge badge-blue">Severity: ${law.severity_level}</span>
-                <br><br>
-                <b>Description:</b><br>
-                ${law.description}
-            `;
-
-            lawsContainer.appendChild(card);
-        });
-
-    })
-    .catch(error => {
-        loading.innerText = "";
-        errorBox.innerText = "Server error. Please try again.";
-        console.error(error);
-    });
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
