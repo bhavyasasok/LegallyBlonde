@@ -401,4 +401,3 @@ window.addEventListener('unhandledrejection', (event) => {
     // Optionally show user-friendly error message
 });
 
-

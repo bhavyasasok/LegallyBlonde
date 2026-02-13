@@ -1,51 +1,30 @@
 import os
-import pickle
-import faiss
-import numpy as np
-import requests
+import json
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask, request, jsonify, render_template
 from sentence_transformers import SentenceTransformer
+from groq import Groq
+from pinecone import Pinecone
 
 app = Flask(__name__)
 
 # -------------------------
-# Load FAISS index + documents
+# Initialize Groq Client
 # -------------------------
-index = faiss.read_index("model/constitution.index")
-
-with open("model/articles.pkl", "rb") as f:
-    documents = pickle.load(f)
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # -------------------------
-# Load embedding model
+# Initialize Pinecone
 # -------------------------
-embed_model = SentenceTransformer("all-MiniLM-L6-v2", local_files_only=True)
-
-def get_embedding(text):
-    return np.array(embed_model.encode(text)).astype("float32")
-
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+pinecone_index = pc.Index("women-legal-rag")
 
 # -------------------------
-# Ollama Call (Safe Version)
+# Load Embedding Model
 # -------------------------
-def ask_llama(prompt):
-    try:
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={
-                "model": "mistral",
-                "prompt": prompt,
-                "stream": False
-            },
-            timeout=60
-        )
-
-        response.raise_for_status()
-        return response.json().get("response", "")
-
-    except Exception as e:
-        return f"AI Error: {str(e)}"
-
+embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # -------------------------
 # Serve Frontend
@@ -56,7 +35,7 @@ def home():
 
 
 # -------------------------
-# ANALYZE ROUTE
+# ANALYZE ROUTE (RAG + Groq)
 # -------------------------
 @app.route("/analyze", methods=["POST"])
 def analyze():
@@ -67,113 +46,109 @@ def analyze():
         if not user_problem:
             return jsonify({"error": "No problem provided"}), 400
 
-        # Embed query
-        query_vector = np.array([get_embedding(user_problem)])
+        # 1️⃣ Embed user query
+        query_embedding = embed_model.encode(user_problem).tolist()
 
-        # FAISS search
-        distances, indices = index.search(query_vector, 10)
+        # 2️⃣ Query Pinecone
+        results = pinecone_index.query(
+            vector=query_embedding,
+            top_k=5,
+            include_metadata=True
+        )
 
-        candidates = []
+        matches = results.get("matches", [])
 
-        for idx, dist in zip(indices[0], distances[0]):
-            law_metadata = documents[idx]
+        if not matches:
+            return jsonify({
+                "you_are_heard": "We understand this is a difficult situation.",
+                "what_the_law_says": "No relevant laws were found in the database.",
+                "your_next_steps": "Please consult a legal professional.",
+                "helplines": "112, 181",
+                "disclaimer": "This is informational only."
+            })
 
-
-            score = 0
-            score += (1 / (dist + 1e-5)) * 50
-
-            if law_metadata.get("emergency"):
-                score += 30
-
-            if law_metadata.get("gender_specific"):
-                score += 15
-
-            score += law_metadata.get("severity_level", 0) * 2
-
-            candidates.append((score, law_metadata))
-
-        candidates.sort(reverse=True, key=lambda x: x[0])
-        matched_laws = [law for score, law in candidates[:5]]
-
-        # Build AI context
+        # 3️⃣ Build context block from Pinecone metadata
         law_text_block = ""
-        for law in matched_laws:
+        for match in matches:
+            metadata = match.get("metadata", {})
             law_text_block += f"""
-Law Name: {law.get('law_name')}
-Act: {law.get('act')}
-Category: {law.get('category')}
-Description: {law.get('description')}
+Law Name: {metadata.get('law_name')}
+Act: {metadata.get('act')}
+Category: {metadata.get('category')}
+Description: {metadata.get('description')}
 """
 
-        # Ask AI with STRICT structured output
-        raw_response = ask_llama(f"""
-You are a legal support assistant for women in India.
+        # 4️⃣ Call Groq LLM
+        chat_completion = groq_client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            temperature=0.2,
+            max_tokens=800,
+            messages=[
+                {
+                    "role": "system",
+                    "content": """You are a legal support assistant for women in India.
 
+You MUST:
+- Use ONLY the retrieved laws provided.
+- Do NOT fabricate laws.
+- Be supportive but legally grounded.
+- Respond ONLY in valid JSON.
+"""
+                },
+                {
+                    "role": "user",
+                    "content": f"""
 User Problem:
 {user_problem}
 
-Relevant Laws:
+Retrieved Laws:
 {law_text_block}
 
-Respond STRICTLY in this format:
+Respond ONLY in this JSON format:
 
-YOU ARE HEARD:
-(text)
+{{
+  "you_are_heard": "...",
+  "what_the_law_says": "...",
+  "your_next_steps": "...",
+  "helplines": "112, 181",
+  "disclaimer": "This is informational only."
+}}
 
-WHAT THE LAW SAYS:
-(text)
+Return JSON only.
+"""
+                }
+            ]
+        )
 
-YOUR NEXT STEPS:
-(text)
+        raw_response = chat_completion.choices[0].message.content
 
-HELPLINES:
-112
-181
-
-DISCLAIMER:
-This is informational only.
-""")
-
-        # -------------------------
-        # Parse Structured Sections
-        # -------------------------
-        heard = ""
-        law_section = ""
-        steps = ""
-        helplines = "Emergency: 112<br>Women Helpline: 181"
-        disclaimer = "This is general information, not legal advice."
-
+        # 5️⃣ Parse JSON
         try:
-            parts = raw_response.split("WHAT THE LAW SAYS:")
-            if len(parts) > 1:
-                heard = parts[0].replace("YOU ARE HEARD:", "").strip()
-                remaining = parts[1]
+            parsed = json.loads(raw_response)
 
-                parts2 = remaining.split("YOUR NEXT STEPS:")
-                if len(parts2) > 1:
-                    law_section = parts2[0].strip()
-                    remaining2 = parts2[1]
+            return jsonify({
+                "you_are_heard": parsed.get("you_are_heard", ""),
+                "what_the_law_says": parsed.get("what_the_law_says", ""),
+                "your_next_steps": parsed.get("your_next_steps", ""),
+                "helplines": parsed.get("helplines", "112, 181"),
+                "disclaimer": parsed.get("disclaimer", "This is informational only.")
+            })
 
-                    parts3 = remaining2.split("HELPLINES:")
-                    if len(parts3) > 1:
-                        steps = parts3[0].strip()
-        except:
-            heard = raw_response
-
-        return jsonify({
-            "you_are_heard": heard,
-            "what_the_law_says": law_section,
-            "your_next_steps": steps,
-            "helplines": helplines,
-            "disclaimer": disclaimer
-        })
+        except Exception:
+            return jsonify({
+                "you_are_heard": "We understand this is a difficult situation.",
+                "what_the_law_says": raw_response,
+                "your_next_steps": "Please consult a legal professional.",
+                "helplines": "112, 181",
+                "disclaimer": "This is informational only."
+            })
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
 # -------------------------
-# CHAT ROUTE (Required by frontend)
+# CHAT ROUTE
 # -------------------------
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -184,14 +159,17 @@ def chat():
         if not message:
             return jsonify({"response": "Please ask a question."})
 
-        reply = ask_llama(f"""
-You are a legal assistant.
+        chat_completion = groq_client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            temperature=0.4,
+            max_tokens=500,
+            messages=[
+                {"role": "system", "content": "You are a helpful legal assistant."},
+                {"role": "user", "content": message}
+            ]
+        )
 
-User question:
-{message}
-
-Answer clearly and concisely.
-""")
+        reply = chat_completion.choices[0].message.content
 
         return jsonify({
             "response": reply
@@ -207,4 +185,4 @@ Answer clearly and concisely.
 # Run Server
 # -------------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
