@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# ForHer ⚖ 
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: Glitch
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Bhavya S Asok - SCMS School of Engineering and Technology,Palissery,Ernakulam
+- Member 2: Surya Kudilil - SCMS School of Engineering and Technology,Palissery,Ernakulam
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+A web-based AI legal support assistant that helps women understand their constitutional rights in India. Users can describe their issue in natural language, and the system retrieves relevant Articles from the Constitution of India using Retrieval-Augmented Generation (RAG) and provides structured legal first-aid guidance.
 
 ### The Problem statement
-[What problem are you solving?]
+Many women in India are unaware of their legal rights or find it difficult to understand complex legal language. Accessing immediate, reliable legal information during distress is challenging, especially without legal consultation or awareness of constitutional protections.
 
 ### The Solution
-[How are you solving it?]
+We built an AI-powered legal assistant using Flask and RAG that analyzes a user’s problem, retrieves relevant Articles from the Constitution of India, and generates a simplified explanation along with suggested next steps and helpline information. The system acts as a first-response legal awareness tool, bridging the gap between complex legal documents and real-world problems.
 
 ---
 
@@ -31,25 +31,42 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+Languages used: Python, HTML, CSS, JavaScript
+
+Frameworks used: Flask
+
+Libraries used:
+  OpenAI API (for embeddings & response generation)
+  FAISS (for vector similarity search)
+  Pandas (for dataset preprocessing)
+  NumPy (for numerical operations)
+
+Tools used:
+  VS Code
+  Git & GitHub
+  Kaggle (dataset source)
 
 ---
 
 ## Features
 
-List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+**Feature 1:** AI-Powered Legal Understanding
+Users can describe their issue in natural language, and the system interprets the meaning using AI.
+
+**Feature 2:** Retrieval-Augmented Generation (RAG)
+The system retrieves relevant Articles from the Constitution of India using semantic search before generating responses.
+
+**Feature 3:** Structured Legal First-Aid Response
+The output includes:
+  Legal summary
+  Applicable Articles
+  Immediate next steps
+  Emergency helpline numbers
+  Disclaimer
+
+**Feature 4:** Mini Chatbot Support
+Users can ask follow-up questions for better clarification without re-entering the full problem.
 
 ---
 
