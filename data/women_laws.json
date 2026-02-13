@@ -1,0 +1,857 @@
+[
+{
+  "law_id": "BNS-63",
+  "law_name": "Rape",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Defines and criminalizes rape."
+},
+{
+  "law_id": "BNS-64",
+  "law_name": "Punishment for Rape",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Specifies punishment for rape."
+},
+{
+  "law_id": "BNS-65",
+  "law_name": "Rape of Minor",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for rape of a minor."
+},
+{
+  "law_id": "BNS-74",
+  "law_name": "Sexual Harassment",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Punishes sexual harassment."
+},
+{
+  "law_id": "BNS-75",
+  "law_name": "Assault to Outrage Modesty",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Assault with intent to outrage modesty."
+},
+{
+  "law_id": "BNS-76",
+  "law_name": "Voyeurism",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Watching or capturing images of women without consent."
+},
+{
+  "law_id": "BNS-77",
+  "law_name": "Stalking",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Repeatedly following or contacting a woman."
+},
+{
+  "law_id": "BNS-79",
+  "law_name": "Dowry Death",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Dowry Crime",
+  "gender_specific": true,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for dowry death."
+},
+{
+  "law_id": "BNS-85",
+  "law_name": "Cruelty by Husband or Relatives",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Punishes cruelty by husband or relatives."
+},
+{
+  "law_id": "PWDVA-2005",
+  "law_name": "Protection of Women from Domestic Violence Act",
+  "act": "PWDVA 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Provides civil remedies for domestic violence."
+},
+{
+  "law_id": "DOWRY-1961",
+  "law_name": "Dowry Prohibition Act",
+  "act": "Dowry Prohibition Act 1961",
+  "category": "Dowry Crime",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Prohibits giving or taking dowry."
+},
+{
+  "law_id": "POSH-2013",
+  "law_name": "Sexual Harassment of Women at Workplace Act",
+  "act": "POSH Act 2013",
+  "category": "Workplace Harassment",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": false,
+  "description": "Prevents sexual harassment at workplace."
+},
+{
+  "law_id": "POCSO-2012",
+  "law_name": "Protection of Children from Sexual Offences Act",
+  "act": "POCSO Act 2012",
+  "category": "Child Protection",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Protects children from sexual offences."
+},
+{
+  "law_id": "IT-66E",
+  "law_name": "Violation of Privacy",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Punishes capturing private images without consent."
+},
+{
+  "law_id": "IT-67A",
+  "law_name": "Publishing Sexually Explicit Content",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Punishes publishing sexually explicit material."
+},
+{
+  "law_id": "MTP-1971",
+  "law_name": "Medical Termination of Pregnancy Act",
+  "act": "MTP Act 1971 (Amended 2021)",
+  "category": "Reproductive Rights",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Regulates abortion rights."
+},
+{
+  "law_id": "PCPNDT-1994",
+  "law_name": "Pre-Conception and Pre-Natal Diagnostic Techniques Act",
+  "act": "PCPNDT Act 1994",
+  "category": "Gender Protection",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Prohibits sex determination tests."
+},
+{
+  "law_id": "HMA-1955",
+  "law_name": "Hindu Marriage Act",
+  "act": "Hindu Marriage Act 1955",
+  "category": "Marriage Law",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Governs Hindu marriages."
+},
+{
+  "law_id": "SMA-1954",
+  "law_name": "Special Marriage Act",
+  "act": "Special Marriage Act 1954",
+  "category": "Marriage Law",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Governs civil marriages."
+},
+{
+  "law_id": "CRPC-MAINT",
+  "law_name": "Right to Maintenance",
+  "act": "Bharatiya Nagarik Suraksha Sanhita 2023",
+  "category": "Maintenance",
+  "gender_specific": false,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Provides right to maintenance for wife."
+},
+{
+  "law_id": "EQUAL-REM",
+  "law_name": "Equal Remuneration Act",
+  "act": "Equal Remuneration Act 1976",
+  "category": "Employment Rights",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Ensures equal pay for equal work."
+},
+{
+  "law_id": "MATERNITY-1961",
+  "law_name": "Maternity Benefit Act",
+  "act": "Maternity Benefit Act 1961",
+  "category": "Employment Rights",
+  "gender_specific": true,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Provides maternity leave benefits."
+},
+{
+  "law_id": "TRAFF-1956",
+  "law_name": "Immoral Traffic Prevention Act",
+  "act": "ITPA 1956",
+  "category": "Human Trafficking",
+  "gender_specific": false,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Prevents trafficking for prostitution."
+},
+{
+  "law_id": "ACID-ATTACK",
+  "law_name": "Acid Attack",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for acid attack."
+},
+{
+  "law_id": "CHILD-MARR",
+  "law_name": "Prohibition of Child Marriage Act",
+  "act": "PCMA 2006",
+  "category": "Child Protection",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Prohibits child marriage."
+}
+
+,
+{
+  "law_id": "BNS-86",
+  "law_name": "Abetment of Suicide of Woman",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Punishes abetment of suicide of a woman."
+},
+{
+  "law_id": "BNS-90",
+  "law_name": "Kidnapping of Woman",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": true,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Kidnapping or abducting a woman."
+},
+{
+  "law_id": "BNS-91",
+  "law_name": "Trafficking of Person",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Human Trafficking",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for trafficking of persons."
+},
+{
+  "law_id": "BNS-95",
+  "law_name": "Insulting Modesty of Woman",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Word, gesture or act intended to insult modesty."
+},
+{
+  "law_id": "BNSS-164",
+  "law_name": "Recording Statement of Rape Victim",
+  "act": "Bharatiya Nagarik Suraksha Sanhita 2023",
+  "category": "Procedure Protection",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Victim statement must be recorded by woman officer."
+},
+{
+  "law_id": "BNSS-183",
+  "law_name": "Medical Examination of Rape Victim",
+  "act": "Bharatiya Nagarik Suraksha Sanhita 2023",
+  "category": "Procedure Protection",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": true,
+  "description": "Immediate medical examination protocol."
+},
+{
+  "law_id": "BSA-24",
+  "law_name": "Presumption in Dowry Death",
+  "act": "Bharatiya Sakshya Adhiniyam 2023",
+  "category": "Evidence Law",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": false,
+  "description": "Court presumes dowry death under certain conditions."
+},
+{
+  "law_id": "BSA-26",
+  "law_name": "Presumption in Abetment of Suicide",
+  "act": "Bharatiya Sakshya Adhiniyam 2023",
+  "category": "Evidence Law",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": false,
+  "description": "Presumption against husband in suicide cases."
+},
+{
+  "law_id": "CONST-14",
+  "law_name": "Right to Equality",
+  "act": "Indian Constitution",
+  "category": "Constitutional Right",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Equality before law and equal protection."
+},
+{
+  "law_id": "CONST-15",
+  "law_name": "Prohibition of Discrimination",
+  "act": "Indian Constitution",
+  "category": "Constitutional Right",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Prohibits discrimination on grounds of sex."
+},
+{
+  "law_id": "CONST-21",
+  "law_name": "Right to Life and Dignity",
+  "act": "Indian Constitution",
+  "category": "Constitutional Right",
+  "gender_specific": false,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Right to live with dignity and safety."
+},
+{
+  "law_id": "HSA-2005",
+  "law_name": "Equal Coparcenary Rights for Daughters",
+  "act": "Hindu Succession Act (Amendment) 2005",
+  "category": "Property Rights",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Daughters have equal property rights."
+},
+{
+  "law_id": "MUSLIM-DIV",
+  "law_name": "Muslim Women Protection on Divorce Act",
+  "act": "Muslim Women Act 1986",
+  "category": "Divorce Law",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Rights of Muslim women after divorce."
+},
+{
+  "law_id": "TRIPLE-TALAQ",
+  "law_name": "Muslim Women Protection of Rights on Marriage Act",
+  "act": "2019 Act",
+  "category": "Marriage Law",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Criminalizes instant triple talaq."
+},
+{
+  "law_id": "WORK-FORCE",
+  "law_name": "Factories Act – Safety of Women",
+  "act": "Factories Act 1948",
+  "category": "Employment Rights",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Regulates safety conditions in factories."
+},
+{
+  "law_id": "NATIONAL-WOMEN",
+  "law_name": "National Commission for Women Act",
+  "act": "NCW Act 1990",
+  "category": "Institutional Protection",
+  "gender_specific": true,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Establishes National Commission for Women."
+},
+{
+  "law_id": "CYBER-STALK",
+  "law_name": "Cyber Stalking",
+  "act": "IT Act + BNS",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Online harassment and stalking."
+},
+{
+  "law_id": "DEFAM-499",
+  "law_name": "Defamation",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Criminal Law",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Protection against false allegations."
+},
+{
+  "law_id": "WRONG-CONF",
+  "law_name": "Wrongful Confinement",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Illegal confinement of a person."
+},
+{
+  "law_id": "CRIM-INTIM",
+  "law_name": "Criminal Intimidation",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Threatening harm to a person."
+}
+,
+{
+  "law_id": "CRPC-125",
+  "law_name": "Maintenance for Wife",
+  "act": "Criminal Procedure (Now BNSS equivalent)",
+  "category": "Maintenance",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Wife can claim maintenance if neglected."
+},
+{
+  "law_id": "HMA-24",
+  "law_name": "Interim Maintenance",
+  "act": "Hindu Marriage Act 1955",
+  "category": "Maintenance",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Court may grant interim maintenance during proceedings."
+},
+{
+  "law_id": "HMA-25",
+  "law_name": "Permanent Alimony",
+  "act": "Hindu Marriage Act 1955",
+  "category": "Maintenance",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Permanent financial support after divorce."
+},
+{
+  "law_id": "GWA-17",
+  "law_name": "Custody Welfare Principle",
+  "act": "Guardians and Wards Act 1890",
+  "category": "Child Custody",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Child welfare is paramount in custody decisions."
+},
+{
+  "law_id": "PWDVA-17",
+  "law_name": "Right to Residence",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Woman has right to reside in shared household."
+},
+{
+  "law_id": "PWDVA-18",
+  "law_name": "Protection Orders",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Court can restrain abuser from committing violence."
+},
+{
+  "law_id": "PWDVA-19",
+  "law_name": "Residence Orders",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Court may order removal of abuser from home."
+},
+{
+  "law_id": "PWDVA-20",
+  "law_name": "Monetary Relief",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Compensation and financial relief for victim."
+},
+{
+  "law_id": "PWDVA-21",
+  "law_name": "Custody Orders",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Temporary custody of children."
+},
+{
+  "law_id": "PWDVA-22",
+  "law_name": "Compensation Orders",
+  "act": "Domestic Violence Act 2005",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": false,
+  "description": "Compensation for injuries and emotional distress."
+},
+{
+  "law_id": "BNS-109",
+  "law_name": "Acid Attack",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for acid attack causing injury."
+},
+{
+  "law_id": "BNS-110",
+  "law_name": "Attempted Acid Attack",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Attempt to throw acid."
+},
+{
+  "law_id": "IT-67",
+  "law_name": "Publishing Obscene Content Online",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Publishing obscene material in electronic form."
+},
+{
+  "law_id": "IT-67A",
+  "law_name": "Sexually Explicit Content Online",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Punishment for sexually explicit digital content."
+},
+{
+  "law_id": "TRAFF-370",
+  "law_name": "Human Trafficking",
+  "act": "BNS 2023",
+  "category": "Human Trafficking",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Recruiting, transporting or exploiting persons."
+},
+{
+  "law_id": "IMMORAL-TPA",
+  "law_name": "Immoral Traffic Prevention Act",
+  "act": "ITPA 1956",
+  "category": "Human Trafficking",
+  "gender_specific": false,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Prevention of trafficking for prostitution."
+},
+{
+  "law_id": "SCST-3",
+  "law_name": "Atrocities Against SC/ST Women",
+  "act": "SC/ST Prevention of Atrocities Act",
+  "category": "Atrocity Protection",
+  "gender_specific": true,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Enhanced protection for SC/ST women."
+},
+{
+  "law_id": "POSH-19",
+  "law_name": "Employer Duties",
+  "act": "POSH Act 2013",
+  "category": "Workplace Harassment",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Employer must prevent sexual harassment."
+},
+{
+  "law_id": "MTP-3",
+  "law_name": "Medical Termination of Pregnancy",
+  "act": "MTP Act 1971 (Amended 2021)",
+  "category": "Reproductive Rights",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Permits abortion under legal conditions."
+},
+{
+  "law_id": "SENIOR-23",
+  "law_name": "Maintenance of Senior Women",
+  "act": "Maintenance of Parents and Senior Citizens Act",
+  "category": "Senior Citizen Protection",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Protection and maintenance of elderly women."
+}
+,
+{
+  "law_id": "BNS-303",
+  "law_name": "Honour Killing",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 10,
+  "emergency": true,
+  "description": "Punishment for murder committed in the name of honour."
+},
+{
+  "law_id": "BNS-96",
+  "law_name": "Abetment of Suicide",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Violent Crime",
+  "gender_specific": false,
+  "severity_level": 9,
+  "emergency": true,
+  "description": "Punishment for abetting suicide, including dowry-related cases."
+},
+{
+  "law_id": "BNS-78",
+  "law_name": "Voyeurism",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Watching or capturing images of a woman engaging in private act."
+},
+{
+  "law_id": "BNS-79",
+  "law_name": "Stalking",
+  "act": "Bharatiya Nyaya Sanhita 2023",
+  "category": "Sexual Offence",
+  "gender_specific": true,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Repeatedly following or contacting a woman against her will."
+},
+{
+  "law_id": "IT-66E",
+  "law_name": "Violation of Privacy",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Capturing or publishing private images without consent."
+},
+{
+  "law_id": "IT-72",
+  "law_name": "Breach of Confidentiality",
+  "act": "Information Technology Act 2000",
+  "category": "Cyber Crime",
+  "gender_specific": false,
+  "severity_level": 6,
+  "emergency": false,
+  "description": "Unauthorized disclosure of personal information."
+},
+{
+  "law_id": "HMA-13",
+  "law_name": "Divorce Grounds",
+  "act": "Hindu Marriage Act 1955",
+  "category": "Marriage & Divorce",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Cruelty, desertion, adultery and other grounds for divorce."
+},
+{
+  "law_id": "HMA-13B",
+  "law_name": "Mutual Consent Divorce",
+  "act": "Hindu Marriage Act 1955",
+  "category": "Marriage & Divorce",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Divorce by mutual consent."
+},
+{
+  "law_id": "SMA-27",
+  "law_name": "Divorce Under Special Marriage Act",
+  "act": "Special Marriage Act 1954",
+  "category": "Marriage & Divorce",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Divorce provisions for interfaith marriages."
+},
+{
+  "law_id": "HSA-14",
+  "law_name": "Absolute Property of Female Hindu",
+  "act": "Hindu Succession Act 1956",
+  "category": "Property Rights",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Property possessed by female Hindu is her absolute property."
+},
+{
+  "law_id": "HSA-6A",
+  "law_name": "Daughter Coparcenary Rights",
+  "act": "Hindu Succession (Amendment) Act 2005",
+  "category": "Property Rights",
+  "gender_specific": true,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Daughter has equal rights in ancestral property."
+},
+{
+  "law_id": "LEGAL-AID-39A",
+  "law_name": "Free Legal Aid",
+  "act": "Legal Services Authorities Act 1987",
+  "category": "Legal Aid",
+  "gender_specific": false,
+  "severity_level": 3,
+  "emergency": false,
+  "description": "Women entitled to free legal services."
+},
+{
+  "law_id": "SURROGACY-2021",
+  "law_name": "Surrogacy Regulation Act",
+  "act": "Surrogacy (Regulation) Act 2021",
+  "category": "Reproductive Rights",
+  "gender_specific": true,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Regulates surrogacy procedures."
+},
+{
+  "law_id": "ADOPTION-1956",
+  "law_name": "Hindu Adoption and Maintenance",
+  "act": "HAMA 1956",
+  "category": "Adoption",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Legal adoption and maintenance rights."
+},
+{
+  "law_id": "JJ-2015",
+  "law_name": "Juvenile Justice Adoption",
+  "act": "Juvenile Justice Act 2015",
+  "category": "Adoption",
+  "gender_specific": false,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Adoption procedures under JJ Act."
+},
+{
+  "law_id": "LIVEIN-DV",
+  "law_name": "Live-in Relationship Protection",
+  "act": "Judicial Interpretation under DV Act",
+  "category": "Domestic Violence",
+  "gender_specific": true,
+  "severity_level": 6,
+  "emergency": true,
+  "description": "Women in live-in relationships protected under DV Act."
+},
+{
+  "law_id": "WITNESS-2018",
+  "law_name": "Witness Protection Scheme",
+  "act": "Witness Protection Scheme 2018",
+  "category": "Victim Protection",
+  "gender_specific": false,
+  "severity_level": 7,
+  "emergency": true,
+  "description": "Protection for victims and witnesses."
+},
+{
+  "law_id": "LABOUR-OSH",
+  "law_name": "Occupational Safety for Women",
+  "act": "Occupational Safety Code 2020",
+  "category": "Labour Law",
+  "gender_specific": false,
+  "severity_level": 5,
+  "emergency": false,
+  "description": "Ensures workplace safety for women workers."
+},
+{
+  "law_id": "FACTORY-66",
+  "law_name": "Women Working Hours Protection",
+  "act": "Factories Act 1948",
+  "category": "Labour Law",
+  "gender_specific": true,
+  "severity_level": 4,
+  "emergency": false,
+  "description": "Regulates working hours and safety."
+},
+{
+  "law_id": "PCPNDT-1994",
+  "law_name": "Pre-Conception & Pre-Natal Diagnostic Techniques Act",
+  "act": "PCPNDT Act 1994",
+  "category": "Gender Protection",
+  "gender_specific": true,
+  "severity_level": 8,
+  "emergency": true,
+  "description": "Prevents sex-selective abortion."
+}
+
+]
