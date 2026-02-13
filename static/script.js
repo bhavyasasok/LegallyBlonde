@@ -1,5 +1,4 @@
-﻿// Configuration - UPDATE THIS WITH YOUR BACKEND URL
-const API_BASE_URL = 'http://localhost:5000'; // Change this to your Flask backend URL
+﻿const API_BASE_URL = '';  // Keep empty when frontend & backend are same server
 
 // State management
 let chatHistory = [];
@@ -93,7 +92,25 @@ function initializeGuidanceForm() {
             
         } catch (error) {
             console.error('Error:', error);
-            alert('We encountered an error processing your request. Please try again or contact support.');
+
+            // Show backend error inside response section instead of popup
+            document.getElementById('response-heard').innerHTML =
+                "<p>We are currently unable to process your request.</p>";
+
+            document.getElementById('response-law').innerHTML =
+                "<p>Please check if the backend server is running.</p>";
+
+            document.getElementById('response-steps').innerHTML =
+                "<p>Try refreshing the page or restarting the server.</p>";
+
+            document.getElementById('response-helplines').innerHTML =
+                "<p>Emergency: 112<br>Women Helpline: 181</p>";
+
+            document.getElementById('response-disclaimer').innerHTML =
+                "<p>This is general information, not legal advice.</p>";
+
+            document.getElementById('response-section').style.display = 'block';
+
         } finally {
             // Reset button state
             btnText.style.display = 'inline';
@@ -186,7 +203,8 @@ function initializeChat() {
         scrollChatToBottom();
         
         try {
-            const response = await fetch(`${API_BASE_URL}/chat`, {
+            const response = await fetch('/chat', {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
