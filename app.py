@@ -1,7 +1,21 @@
 import os
 import json
+from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(dotenv_path=BASE_DIR / ".env")
+load_dotenv(dotenv_path=BASE_DIR / ".env.local", override=True)
+
+
+def require_env(name):
+    value = os.getenv(name)
+    if not value:
+        raise RuntimeError(
+            f"Missing required environment variable: {name}. "
+            "Set it in .env or .env.local."
+        )
+    return value
 
 from flask import Flask, request, jsonify, render_template
 from sentence_transformers import SentenceTransformer
@@ -13,12 +27,12 @@ app = Flask(__name__)
 # -------------------------
 # Initialize Groq Client
 # -------------------------
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+groq_client = Groq(api_key=require_env("GROQ_API_KEY"))
 
 # -------------------------
 # Initialize Pinecone
 # -------------------------
-pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+pc = Pinecone(api_key=require_env("PINECONE_API_KEY"))
 pinecone_index = pc.Index("women-legal-rag")
 
 # -------------------------
