@@ -76,12 +76,12 @@ Users can ask follow-up questions for better clarification without re-entering t
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[Installation commands - pip install -r requirements.txt]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[Run commands - python app.py]
 ```
 
 
@@ -148,7 +148,7 @@ Shows the overall features of the website
 
 ---
 
-##AI Tools Used 
+## AI Tools Used 
 
 Tool Used:
 ChatGPT (OpenAI)
