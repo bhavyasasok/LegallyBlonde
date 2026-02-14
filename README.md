@@ -19,9 +19,6 @@ Glitch
 * **Bhavya S Asok** – SCMS School of Engineering and Technology, Palissery, Ernakulam
 * **Surya Kudilil** – SCMS School of Engineering and Technology, Palissery, Ernakulam
 
-### Hosted Project Link
-
-[Add your deployed Render link here]
 
 ---
 
