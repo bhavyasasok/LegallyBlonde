@@ -49,6 +49,24 @@ Tools used:
 
 ---
 
+🧠 Core Technology – RAG (Retrieval-Augmented Generation)
+
+Our system uses a RAG pipeline, which combines:
+
+Semantic Retrieval
+
+User input is converted into vector embeddings.
+
+Pinecone vector database retrieves the most relevant legal provisions.
+
+Grounded AI Generation
+
+Retrieved laws are passed to a Large Language Model (Groq LLM).
+
+The LLM generates structured guidance using only the retrieved laws.
+
+This prevents hallucination and ensures legally grounded responses.
+
 ## Features
 
 **Feature 1:** AI-Powered Legal Understanding
