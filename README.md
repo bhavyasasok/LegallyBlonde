@@ -1,15 +1,3 @@
-Below is your **complete, merged, professional README.md** combining:
-
-* Your current content
-* Updated RAG architecture
-* Pinecone + Groq integration
-* Clean API documentation
-* Deployment-ready structure
-
-You can copy-paste this directly as your final README.
-
----
-
 <p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
