@@ -94,15 +94,20 @@ Users can ask follow-up questions for better clarification without re-entering t
 #### Screenshots (Add at least 3)
 
 
+Home Page
+Home_page.jpeg
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+About Page
+About.jpeg
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Chatbot
+Chatbot.jpeg
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Lawyers Page
+Lawyers_page.jpeg
+
+Demo Video
+ForHerVid.mp4
 
 #### Diagrams
 
