@@ -218,7 +218,7 @@ Handles follow-up questions.
 ## 1️⃣ Clone Repository
 
 ```
-git clone <repo-url>
+git clone https://github.com/bhavyasasok/LegallyBlonde.git
 cd ForHer
 ```
 
