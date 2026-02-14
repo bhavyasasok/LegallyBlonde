@@ -266,25 +266,9 @@ http://localhost:5001
 
 ---
 
-# Screenshots
+# Screenshots & Demo Video
 
-Home Page
-[https://github.com/bhavyasasok/LegallyBlonde/blob/main/Home_page.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Home_page.jpeg)
-
-About Page
-[https://github.com/bhavyasasok/LegallyBlonde/blob/main/About_page.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/About_page.jpeg)
-
-Chatbot
-[https://github.com/bhavyasasok/LegallyBlonde/blob/main/Chatbot.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Chatbot.jpeg)
-
-Lawyers Page
-[https://github.com/bhavyasasok/LegallyBlonde/blob/main/Lawyer_page.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Lawyer_page.jpeg)
-
----
-
-# Demo Video
-
-[https://github.com/bhavyasasok/LegallyBlonde/blob/main/ForHerVid%20(1).mp4](https://github.com/bhavyasasok/LegallyBlonde/blob/main/ForHerVid%20%281%29.mp4)
+https://drive.google.com/drive/folders/1fGoX2Iifhg0efehdGIDlD9YiYDXhO4KR?usp=sharing
 
 ---
 
