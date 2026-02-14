@@ -84,13 +84,6 @@ Users can ask follow-up questions for better clarification without re-entering t
 [Run commands - e.g., npm start, python app.py]
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
 
 ---
 
@@ -99,6 +92,8 @@ Users can ask follow-up questions for better clarification without re-entering t
 ### For Software:
 
 #### Screenshots (Add at least 3)
+
+
 
 ![Screenshot1](Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
