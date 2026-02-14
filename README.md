@@ -84,13 +84,6 @@ Users can ask follow-up questions for better clarification without re-entering t
 [Run commands - e.g., npm start, python app.py]
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
 
 ---
 
@@ -100,53 +93,49 @@ Users can ask follow-up questions for better clarification without re-entering t
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Home Page
+[Home_page.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Home_page.jpeg)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+About Page
+[About.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/About_page.jpeg)
+
+Chatbot
+[Chatbot.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Chatbot.jpeg)
+
+Lawyers Page
+[Lawyers_page.jpeg](https://github.com/bhavyasasok/LegallyBlonde/blob/main/Lawyer_page.jpeg)
+
+Demo Video
+[ForHerVid.mp4](https://github.com/bhavyasasok/LegallyBlonde/blob/main/ForHerVid%20(1).mp4)
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+Architecture Explanation:
 
-**Application Workflow:**
+Frontend (HTML, CSS, JavaScript)
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+Flask Backend (Python)
 
+RAG Pipeline
+
+Embedding Model
+
+Vector Search (FAISS)
+
+Constitution Dataset
+
+OpenAI API for response generation
+
+Structured response sent back to frontend
+
+Data Flow:
+
+User → Frontend → Flask API → RAG Retrieval → OpenAI → Response → Frontend Display
 ---
 
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
----
 
 ## Additional Documentation
 
