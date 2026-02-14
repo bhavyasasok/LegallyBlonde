@@ -128,24 +128,6 @@ Users can ask follow-up clarification questions without re-entering their full i
 
 # RAG Architecture
 
-## System Architecture
-
-Frontend (HTML/CSS/JS)
-↓
-Flask Backend
-↓
-Embedding Model (Sentence Transformers)
-↓
-Pinecone Vector Search
-↓
-Groq LLM (Grounded Generation)
-↓
-Structured JSON Response
-↓
-Frontend Display
-
----
-
 ## Data Flow
 
 User → Frontend → Flask API → Embedding → Pinecone Retrieval → Groq → Structured JSON → Frontend Display
