@@ -26,6 +26,7 @@ pinecone_index = pc.Index("women-legal-rag")
 # -------------------------
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
+
 # -------------------------
 # Serve Frontend
 # -------------------------
@@ -56,10 +57,11 @@ def analyze():
             include_metadata=True
         )
 
-        matches = results.get("matches", [])
+        matches = results.matches if hasattr(results, "matches") else results.get("matches", [])
 
         if not matches:
             return jsonify({
+                "related_laws": [],
                 "you_are_heard": "We understand this is a difficult situation.",
                 "what_the_law_says": "No relevant laws were found in the database.",
                 "your_next_steps": "Please consult a legal professional.",
@@ -67,16 +69,34 @@ def analyze():
                 "disclaimer": "This is informational only."
             })
 
-        # 3️⃣ Build context block from Pinecone metadata
+        # 3️⃣ Extract Related Laws + Build Context
         law_text_block = ""
+        related_laws = []
+
         for match in matches:
-            metadata = match.get("metadata", {})
+            metadata = match.metadata if hasattr(match, "metadata") else match.get("metadata", {})
+
+            law_data = {
+                "law_id": metadata.get("law_id", "N/A"),
+                "law_name": metadata.get("law_name", "N/A"),
+                "act": metadata.get("act", "N/A"),
+                "category": metadata.get("category", "N/A"),
+                "description": metadata.get("description", "N/A"),
+                "emergency": metadata.get("emergency", False),
+                "severity_level": metadata.get("severity_level", 0),
+                "gender_specific": metadata.get("gender_specific", False)
+            }
+
+            related_laws.append(law_data)
+
             law_text_block += f"""
-Law Name: {metadata.get('law_name')}
-Act: {metadata.get('act')}
-Category: {metadata.get('category')}
-Description: {metadata.get('description')}
-"""
+        Law ID: {law_data['law_id']}
+        Law Name: {law_data['law_name']}
+        Act: {law_data['act']}
+        Category: {law_data['category']}
+        Description: {law_data['description']}
+        """
+
 
         # 4️⃣ Call Groq LLM
         chat_completion = groq_client.chat.completions.create(
@@ -120,13 +140,14 @@ Return JSON only.
             ]
         )
 
-        raw_response = chat_completion.choices[0].message.content
+        raw_response = chat_completion.choices[0].message.content.strip()
 
-        # 5️⃣ Parse JSON
+        # 5️⃣ Parse JSON safely
         try:
             parsed = json.loads(raw_response)
 
             return jsonify({
+                "related_laws": related_laws,   # ✅ Now returned
                 "you_are_heard": parsed.get("you_are_heard", ""),
                 "what_the_law_says": parsed.get("what_the_law_says", ""),
                 "your_next_steps": parsed.get("your_next_steps", ""),
@@ -135,7 +156,9 @@ Return JSON only.
             })
 
         except Exception:
+            # If LLM fails to return JSON
             return jsonify({
+                "related_laws": related_laws,
                 "you_are_heard": "We understand this is a difficult situation.",
                 "what_the_law_says": raw_response,
                 "your_next_steps": "Please consult a legal professional.",

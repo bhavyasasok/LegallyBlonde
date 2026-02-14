@@ -124,7 +124,27 @@ function displayResponse(data) {
     const responseSection = document.getElementById('response-section');
     
     // Populate response sections
-    document.getElementById('response-heard').innerHTML = formatText(data.you_are_heard || 'We understand this is a difficult situation.');
+    // Show related laws instead of "You Are Heard"
+    if (data.related_laws && data.related_laws.length > 0) {
+
+        const lawsHtml = data.related_laws.map(law => `
+            <li style="margin-bottom:15px;">
+                <strong>${law.law_id} – ${law.law_name}</strong><br>
+                <b>Act:</b> ${law.act}<br>
+                <b>Category:</b> ${law.category}<br>
+                <b>Emergency:</b> ${law.emergency ? "Yes" : "No"}<br>
+                <b>Description:</b> ${law.description}
+            </li>
+        `).join("");
+
+        document.getElementById('response-heard').innerHTML =
+            `<ul>${lawsHtml}</ul>`;
+
+    } else {
+        document.getElementById('response-heard').innerHTML =
+            "<p>No related laws found.</p>";
+    }
+
     document.getElementById('response-law').innerHTML = formatText(data.what_the_law_says || 'Legal information is being prepared.');
     document.getElementById('response-steps').innerHTML = formatText(data.your_next_steps || 'Please consult with a legal professional.');
     document.getElementById('response-helplines').innerHTML = formatText(data.helplines || 'Emergency: 112<br>Women Helpline: 181');
